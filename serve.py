@@ -7,7 +7,7 @@ app = Flask(__name__)
 @app.route('/', methods=['POST'])
 def stress_cpu():
     # When a POST request is received, a new process to run stress_cpu.py is started
-    subprocess.Popen(["python3", "stress_cpu.py"])
+    subprocess.Popen(["python3", "submit_process.py"])
     return jsonify(message="CPU stress test initiated"), 202
 
 @app.route('/', methods=['GET'])
